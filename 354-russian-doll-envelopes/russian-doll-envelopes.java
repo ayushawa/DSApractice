@@ -10,8 +10,8 @@ class Solution {
         List<Integer> lis =new ArrayList<>();
         for(int ele: height){
             int ind = Collections.binarySearch(lis,ele);
-            ind = -(ind+1);
-            if(ind<0) continue;
+            if(ind<0) ind = -(ind+1);
+            
             if(ind == lis.size()) lis.add(ele);
             else lis.set(ind,ele);
         }
